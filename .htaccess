@@ -1,6 +1,12 @@
 Options -Indexes
 Options +FollowSymlinks
 
+<IfModule mod_headers.c>
+        Header always add Access-Control-Allow-Origin "*"
+        Header always add Access-Control-Allow-Headers "X-Application, origin, x-requested-with, content-type"
+        Header always add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
+</IfModule>
+
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 

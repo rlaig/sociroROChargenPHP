@@ -219,3 +219,7 @@ nbproject/
 
 # GRFs
 client/*.grf
+
+# chargen specific
+cache/
+client/

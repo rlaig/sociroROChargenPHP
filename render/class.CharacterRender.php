@@ -110,12 +110,18 @@ class CharacterRender extends RORender
 		*/
 
 		// Draw body, get head position
-		$pos = $this->renderImage( $img, array(
+
+		Debug::write('S: ' . $view['sex']);
+		Debug::write('Class: ' . $view['class']); 
+		Debug::write('Body: ' . $view['option']);
+
+    $pos = $this->renderImage( $img, array(
 			"path" => DB::get_body_path( $view['class'], $view['sex'], $view['option'] ), 
 			"pal"  => DB::get_body_pal_path( $view['class'], $view['sex'], $view['clothes_color'] ),
 			"body" => true
 		));
 
+		Debug::write('Robe: ' . $view['robe']);
 		// Draw Robe
 		if ( !empty($view['robe']) )
 			 $this->renderImage( $img, array(
@@ -124,6 +130,7 @@ class CharacterRender extends RORender
 				"robe"  => $view['robe']
 			));
 
+		Debug::write('Head: ' . $view['head']);
 		// Draw head
 		$this->renderImage( $img, array(
 			"path" => DB::get_head_path( $view['hair'], $view['sex'] ),
@@ -132,6 +139,7 @@ class CharacterRender extends RORender
 			"head" => true
 		));
 
+		Debug::write('Head Top: ' . $view['head_top']);
 		// Draw head top
 		if ( !empty($view['head_top']) )
 			 $this->renderImage( $img, array(
@@ -140,6 +148,7 @@ class CharacterRender extends RORender
 				"head"  => true
 			));
 
+		Debug::write('Head Mid: ' . $view['head_mid']);
 		// Draw head mid
 		if ( !empty($view['head_mid']) && $view['head_mid'] !== $view['head_top'] ) // Don't render the same sprite twice
 			$this->renderImage( $img, array(
@@ -148,6 +157,7 @@ class CharacterRender extends RORender
 				"head" => true
 			));
 
+		Debug::write('Head Bottom: ' . $view['head_bottom']);
 		// Draw head bot
 		if ( !empty($view['head_bottom']) && $view['head_bottom'] !== $view['head_mid'] ) // Don't render the same sprite twice
 			$this->renderImage( $img, array(
@@ -156,12 +166,14 @@ class CharacterRender extends RORender
 				"head"  => true
 			));
 			
+		Debug::write('Weapon: ' . $view['weapon']);
 		// Draw Weapon
 		if ( !empty($view['weapon']) )
 			$this->renderImage( $img, array(
 			 	"path" => DB::get_weapon_path( $view['class'], $view['sex'], $view['weapon'] )
 			));
 
+		Debug::write('Shield: ' . $view['shield']);
 		// Draw Shield
 		if ( !empty($view['shield']) )
 			$this->renderImage( $img, array(

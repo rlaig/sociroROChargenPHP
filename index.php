@@ -31,7 +31,7 @@ require_once( __ROOT__ . 'core/class.DB.php');
 
 
 // Set on the debug
-//Debug::enable();
+Debug::enable();
 
 
 
@@ -49,7 +49,7 @@ DB::$path             =     __ROOT__ . "db/"     ;   // The db folder (where is 
 Controller::$hostname =     "127.0.0.1"          ;   // Mysql Host
 Controller::$database =     "ragnarok"           ;   // Database Name
 Controller::$username =     "ragnarok"           ;   // Database Username
-Controller::$password =     "ragnarok"           ;   // Database Pass
+Controller::$password =     "Electron123!"           ;   // Database Pass
 /// -----------------------------------------------------------------
 
 
